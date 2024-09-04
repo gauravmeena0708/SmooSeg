@@ -1,5 +1,5 @@
 output_root: '../'
-data_dir: 'data/'
+data_dir: '/content/drive/MyDrive/'
 experiment_name: "validation"
 res: 320
 batch_size: 32
@@ -9,11 +9,12 @@ run_prediction: True
 dark_mode: True
 use_ddp: False
 
-model_paths:
+#model_paths:
 #  - "checkpoints/cocostuff27_dino_small.ckpt"
-  - "checkpoints/cityscapes_dino_small.ckpt"
-#  - "checkpoints/potsdam_dino_vit_base.ckpt"
-
+ # - "checkpoints/cityscapes_dino_small.ckpt"
+#   - "checkpoints/potsdam_dino_vit_base.ckpt"
+model_paths:
+  - "/content/drive/MyDrive/potsdam_dino_vit_base.ckpt"
 
 hydra:
   run:
