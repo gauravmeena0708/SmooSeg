@@ -127,7 +127,7 @@ def my_app(cfg: DictConfig) -> None:
     print(OmegaConf.to_yaml(cfg))
     seed_everything(seed=0, workers=True)
 
-    dataset_names = ["cityscapes", "cocostuff27"]
+    dataset_names = ["potsdam"]
     img_sets = ["train"]
     crop_types = ["five"]
     crop_ratios = [.5]
