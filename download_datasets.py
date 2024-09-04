@@ -9,8 +9,8 @@ import wget
 def my_app(cfg: DictConfig) -> None:
     data_dir = cfg.data_dir
     dataset_names = [
-        # "potsdam",
-        "cityscapes",
+         "potsdam",
+        #"cityscapes",
         # "cocostuff",
         # "potsdamraw"
         ]
