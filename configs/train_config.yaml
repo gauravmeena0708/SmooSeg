@@ -1,15 +1,16 @@
-output_root: 'outputs/'
-data_dir: 'data/'
+output_root: '/content/drive/MyDrive/output'
+data_dir: '/content/drive/MyDrive/'  # Updated path for Potsdam dataset
 experiment_name: "exp1"
-log_dir: "cityscapes"
+log_dir: "loggs"  # Changed from cityscapes to potsdam
+checkpoint_dir: "checkpts"
 azureml_logging: True
 
 # Loader params
 num_workers: 8
-max_steps: 3000            # 3000 8000
+max_steps: 3000            # 3000 8000   no . of training steps
 batch_size: 32
 
-dataset_name: "cityscapes"
+dataset_name: "potsdam"  # Updated to potsdam
 crop_type: "five"
 crop_ratio: .5
 res: 224
@@ -17,12 +18,12 @@ loader_crop_type: "center"
 
 # Model Params
 extra_clusters: 0
-model_type: "vit_small"   # "vit_base" "vit_small" "mocov2"
+model_type: "vit_base"   # "vit_base" "vit_small" "mocov2"
 arch: "dino"              # "dinov2"  "dino"
 dino_feat_type: "feat"
 projection_type: "nonlinear"
 dino_patch_size: 8
-n_feats: 384              # 2048 # 384 # 768
+n_feats: 384              # 2048 # 384 # 768  size of the output space
 dim: 64
 run_crf: False
 
@@ -36,30 +37,26 @@ alpha: 0.998
 pointwise: True
 seed: 0
 
-# cityscapes dino small
-neg_inter_shift:  0.5
-pos_intra_shift: -0.02
-
 # potsdam dino base
-#neg_inter_shift: 0.5
-#pos_intra_shift: 0.1
+neg_inter_shift: 0.5
+pos_intra_shift: 0.1
 
 # potsdam dinov2 base
 #neg_inter_shift: 0.5
 #pos_intra_shift: 0.32
 
-# cocostuff27 dino small
-#seed: 123456
-#neg_inter_shift:  0.48
-#pos_intra_shift: -0.02
-
 
 # Logging params
-n_images: 6
-scalar_log_freq: 10
-checkpoint_freq: 400
-val_freq: 400
-hist_freq: 100
+n_images: 6               # number of images to use for logging
+scalar_log_freq: 10         # how frequently scalar values (such as loss or accuracy metrics) are logged
+checkpoint_freq: 400         #how often (in terms of steps or iterations) the model’s state (weights and optimizer state) should be saved as a checkpoint
+val_freq: 400                 #how frequently the model’s performance should be evaluated on a validation set
+hist_freq: 100                 # training data will be logged every 100 steps
+
+#hydra:
+#  run:
+#    dir: "/content/drive/MyDrive/output"
+#  output_subdir: "${hydra.run.dir}/${now:%Y-%m-%d_%H-%M-%S}"
 
 
 hydra:
