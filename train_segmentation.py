@@ -183,8 +183,8 @@ def my_app(cfg: DictConfig) -> None:
     OmegaConf.set_struct(cfg, False)
     print(OmegaConf.to_yaml(cfg))
     data_dir = cfg.data_dir
-    log_dir = join(cfg.output_root, "logs")
-    checkpoint_dir = join(cfg.output_root, "checkpoints")
+    log_dir = join(cfg.output_root, "loggs")
+    checkpoint_dir = join(cfg.output_root, "checkpts")
 
     prefix = "{}/{}_{}".format(cfg.log_dir, cfg.dataset_name, cfg.experiment_name)
     name = '{}_date_{}'.format(prefix, datetime.now().strftime('%b%d_%H-%M-%S'))
