@@ -53,13 +53,13 @@ checkpoint_freq: 400         #how often (in terms of steps or iterations) the mo
 val_freq: 400                 #how frequently the model’s performance should be evaluated on a validation set
 hist_freq: 100                 # training data will be logged every 100 steps
 
-#hydra:
-#  run:
-#    dir: "/content/drive/MyDrive/output"
-#  output_subdir: "${hydra.run.dir}/${now:%Y-%m-%d_%H-%M-%S}"
-
-
 hydra:
   run:
-    dir: "."
-  output_subdir: ~
+    dir: "/content/drive/MyDrive/output"
+  output_subdir: "${hydra.run.dir}/${now:%Y-%m-%d_%H-%M-%S}"
+
+
+# hydra:
+#   run:
+#     dir: "."
+#   output_subdir: ~
