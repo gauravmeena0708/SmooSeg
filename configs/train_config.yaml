@@ -1,4 +1,4 @@
-output_root: '/content/drive/MyDrive/output'
+output_root: '/content/drive/MyDrive/output/'
 data_dir: '/content/drive/MyDrive/'  # Updated path for Potsdam dataset
 experiment_name: "exp1"
 log_dir: "loggs"  # Changed from cityscapes to potsdam
