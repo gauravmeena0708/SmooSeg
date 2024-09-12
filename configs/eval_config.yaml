@@ -3,7 +3,7 @@ data_dir: '/content/drive/MyDrive/'
 experiment_name: "validation"
 res: 320
 batch_size: 32
-num_workers: 8
+num_workers: 3
 run_crf: True
 run_prediction: True
 dark_mode: True
