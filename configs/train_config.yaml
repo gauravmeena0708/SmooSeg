@@ -6,7 +6,7 @@ checkpoint_dir: "checkpts"
 azureml_logging: True
 
 # Loader params
-num_workers: 8
+num_workers: 3
 max_steps: 3000            # 3000 8000   no . of training steps
 batch_size: 32
 
@@ -23,7 +23,7 @@ arch: "dino"              # "dinov2"  "dino"
 dino_feat_type: "feat"
 projection_type: "nonlinear"
 dino_patch_size: 8
-n_feats: 384              # 2048 # 384 # 768  size of the output space
+n_feats: 768              # 2048 # 384 # 768  size of the output space
 dim: 64
 run_crf: False
 
