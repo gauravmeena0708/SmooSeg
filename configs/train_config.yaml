@@ -1,5 +1,5 @@
-output_root: "./output/"
-data_dir: "./" # Updated path for Potsdam dataset
+output_root: "/content/drive/MyDrive/output/"
+data_dir: "/content/drive/MyDrive/" # Updated path for Potsdam dataset
 experiment_name: "exp1"
 log_dir: "loggs" # Changed from cityscapes to potsdam
 checkpoint_dir: "checkpts"
@@ -54,7 +54,7 @@ hist_freq: 100 # training data will be logged every 100 steps
 
 hydra:
   run:
-    dir: "./output"
+    dir: "/content/drive/MyDrive/output"
   output_subdir: "${hydra.run.dir}/${now:%Y-%m-%d_%H-%M-%S}"
 # hydra:
 #   run:
