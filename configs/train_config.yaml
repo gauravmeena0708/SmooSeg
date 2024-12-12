@@ -1,5 +1,5 @@
-output_root: "/content/drive/MyDrive/output/"
-data_dir: "/content/drive/MyDrive/" # Updated path for Potsdam dataset
+output_root: "/kaggle/working/output/"
+data_dir: "/kaggle/working/" # Updated path for Potsdam dataset
 experiment_name: "exp1"
 log_dir: "loggs" # Changed from cityscapes to potsdam
 checkpoint_dir: "checkpts"
@@ -7,7 +7,7 @@ azureml_logging: True
 
 # Loader params
 num_workers: 2
-max_steps: 3000 # 3000 8000   no . of training steps
+max_steps: 21 # 3000 8000   no . of training steps
 batch_size: 32
 
 dataset_name: "potsdam" # Updated to potsdam
@@ -54,7 +54,7 @@ hist_freq: 100 # training data will be logged every 100 steps
 
 hydra:
   run:
-    dir: "/content/drive/MyDrive/output"
+    dir: "/kaggle/working/output"
   output_subdir: "${hydra.run.dir}/${now:%Y-%m-%d_%H-%M-%S}"
 # hydra:
 #   run:
